@@ -1,0 +1,17 @@
+torch
+accelerate
+torchvision
+ftfy
+tensorboard
+Jinja2
+scipy
+xformers
+bitsandbytes
+opencv-python
+sentencepiece
+ema-pytorch
+einops
+ninja
+h5py
+chardet
+ema-pytorch
