@@ -1437,7 +1437,7 @@ class TryOnImagen(nn.Module):
 class BaseParallelUnet(ParallelUNet):
     def __init__(self, *args, **kwargs):
         default_kwargs = dict(
-            image_size=(144, 112),
+            image_size=(128, 128),
             dim=128,
             context_dim=512,
             time_cond_dim=512,
@@ -1455,7 +1455,7 @@ class BaseParallelUnet(ParallelUNet):
 class SRParallelUnet(ParallelUNet):
     def __init__(self, *args, **kwargs):
         default_kwargs = dict(
-            image_size=(288, 224),
+            image_size=(256, 256),
             dim=128,
             context_dim=512,
             time_cond_dim=768,
