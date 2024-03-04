@@ -194,9 +194,14 @@ Some context regarding our experiment, which doesn't follow the original paper e
 ### Base Parallel UNet (128x128)
 Already at 250k steps (50% from the 500k prescribed by the paper) we can see some outstanding results on difficult background, fabrics and poses. Thus, we stopped at this stage to focus on the SR UNet.
 
+![Base UNet results](./assets/base_unet_results.png)
+
 
 ### Base Parallel UNet → SR Parallel UNet Cascade (256x256)
 At 125k steps, we can see that the SR UNet does a successful job at upscaling the base UNet output. It adds a lot of detail and even fixes mistakes in the input image. However, as is immediately apparent there is a persistent color tint which plagues the generation results.
+
+![Base UNet results](./assets/sr_unet_results.png)
+
 This is a known issue which is well-documented in related literature for diffusion upscalers. Other researchers we know that have tried to implement this paper have also reported this phenomenon. 
 
 ## Future Steps
