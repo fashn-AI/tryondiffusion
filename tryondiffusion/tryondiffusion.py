@@ -49,7 +49,7 @@ from tryondiffusion.modules.tryon import (
     resize_image_to,
 )
 
-__all__ = ["ParallelUNet", "TryOnImagen", "BaseParallelUnet", "SRParallelUnet", "get_unet_by_name"]
+__all__ = ["ParallelUNet", "TryOnImagen", "BaseParallelUnet", "SRParallelUnet", "NullUnet", "get_unet_by_name"]
 
 
 def build_time_cond_layers(emb_dim, time_cond_dim, context_dim, num_tokens):
