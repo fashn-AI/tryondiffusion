@@ -44,14 +44,15 @@ garment_noise_times = torch.randn(1,)
 output = unet(
     noisy_images=noisy_images,
     time=time,
-    lowres_cond_img=lowres_cond_images,
-    lowres_noise_times=lowres_noise_times,
     ca_images=ca_images,
     ca_noise_times=ca_noise_times,
     garment_images=garment_images,
     garment_noise_times=garment_noise_times,
     person_poses=person_poses,
     garment_poses=garment_poses,
+    # lowres inputs are not needed for base UNet
+    lowres_cond_img=None,
+    lowres_noise_times=None,
 )
 print(output.shape) # (1, 3, 128, 128)
 ```
