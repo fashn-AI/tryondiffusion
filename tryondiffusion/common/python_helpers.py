@@ -1,8 +1,9 @@
-from functools import partial, wraps
-from math import ceil
+from functools import wraps, partial
+from typing import Iterable, List, Tuple, Any, Callable
 
 
-def exists(val):
+def exists(val: Any) -> bool:
+    """Check if a value exists (is not None)."""
     return val is not None
 
 
@@ -154,9 +155,28 @@ def url_to_bucket(url):
 # gradient accumulation functions
 
 
-def split_iterable(it, split_size):
-    accum = []
-    for ind in range(ceil(len(it) / split_size)):
-        start_index = ind * split_size
-        accum.append(it[start_index : (start_index + split_size)])
-    return accum
+def split_iterable(it: Iterable, split_size: int) -> List[List]:
+    """
+    Splits an iterable into chunks of a specified size.
+
+    Args:
+        it (Iterable): The iterable to split.
+        split_size (int): The size of each chunk.
+
+    Returns:
+        List[List]: A list of chunks, each containing elements from the original iterable.
+        
+    Raises:
+        ValueError: If split_size is not a positive integer.
+    """
+    if split_size <= 0 or not isinstance(split_size, int):
+        raise ValueError("split_size must be a positive integer")
+
+    chunks = [it[start:start + split_size] for start in range(0, len(it), split_size)]
+    return chunks
+
+
+# Example usage of the split_iterable function:
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(split_iterable(numbers, 3))  # Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
+
