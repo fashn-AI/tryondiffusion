@@ -64,9 +64,11 @@ class ConditionedResnetBlock(nn.Module):
         self.res_conv = nn.Conv2d(dim_in, dim_out, 1) if dim_in != dim_out else Identity()
 
     def forward(self, x, time_emb=None):
-        x = self.ada_gn1(x, time_emb=time_emb)
-        x = self.activation(x)
-        h = self.conv1(x)
+        res = self.res_conv(x)
+
+        h = self.ada_gn1(x, time_emb=time_emb)
+        h = self.activation(h)
+        h = self.conv1(h)
         h = self.dropout1(h)
 
         h = self.ada_gn2(h, time_emb=time_emb)
@@ -76,7 +78,7 @@ class ConditionedResnetBlock(nn.Module):
 
         h = h * self.gca(h)
 
-        return h + self.res_conv(x)
+        return h + res
 
 
 class ConditionedSelfAttention2D(nn.Module):
