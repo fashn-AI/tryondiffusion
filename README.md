@@ -16,8 +16,8 @@ In this repository you can find:
 In this repository you WON'T find:
 1. Data-related code to create model inputs (e.g. clothing-agnostic image)
     * Data preparation has many degrees of freedom such as choice of human parser, pose keypoints model and format, etc. We felt it would be better to keep the architecture and training logic independent.
-
-You are welcome to join our Fashion E-Commerce community <a href="https://discord.gg/qfZ9G76Btp"><img alt="Join us on Discord" src="https://img.shields.io/discord/1143576243380441170?color=5865F2&logo=discord&logoColor=white"></a> and share your thoughts with us regarding this project in the dedicated # :dress: | virtual-try-on channel
+      
+You are welcome to join our Discord server <a href="https://discord.gg/4XRXgJ2ysU"><img alt="Join us on Discord" src="https://img.shields.io/discord/1259818755907784735?color=5865F2&logo=discord&logoColor=white"></a> and share your thoughts with us regarding this project in the dedicated # :octopus: | open-source channel
 
 ## Special Thanks
 * [Phil Wang](https://github.com/lucidrains) - For his open-source implementation of [Imagen](https://github.com/lucidrains/imagen-pytorch/tree/main), which served as the core codebase for this repository.
