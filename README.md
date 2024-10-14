@@ -216,13 +216,6 @@ imagen = TryOnImagen(...,
 ```
 2. Implement a shifted-cosine noise schedule for the SR UNet as suggested by [Simple diffusion: End-to-end diffusion for high resolution images](https://arxiv.org/abs/2301.11093), which should help the network focus on low-level frequency features.
 
-## Support Us
-We are a modest, bootstrapped, 2-person team. We are confident we can push the state-of-the-art for virtual try-on further and release exciting new models both for commercial uses and open-source.
-
-**How can you help?** 
-Our main bottleneck for progress is GPU compute. Having access to 8 H100s can significantly boost our pace and reduce our experiments time from 3 weeks to 3 days.
-If you can provide us either with hardware or funds for hardware, and wish to collaborate with us, please contact us at [info@fashn.ai](mailto:info@fashn.ai)
-
 ## Citations
 ```bibtex
 @misc{zhu2023tryondiffusion,
